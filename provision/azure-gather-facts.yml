@@ -1,0 +1,14 @@
+- name: Get facts by name
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Get facts for the virtual machine
+      azure_rm_virtualmachine_facts:
+        resource_group: myResourceGroup
+        name: myVM1
+      register: msg
+
+    - name: Display output from variable
+      debug:
+        var: msg
+

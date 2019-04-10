@@ -1,0 +1,14 @@
+---
+- name: Conditional based on boolean
+  hosts: vm1
+  vars:
+    install: true 
+                        
+  tasks:
+    - name: Dovecot being installed conditionally.
+      yum:
+        name: dovecot
+        state: latest
+      when: not install
+      #when: install
+

@@ -1,0 +1,9 @@
+---
+  - name: Installs the {{pkg.pname}} package
+    debug:
+      msg: "{{pkg.pname}} package is successfully installed"
+
+  - name: Set service startup for {{pkg.pname}}
+    debug:
+      msg: "{{pkg.service}} service is now {{pkg.s_state}}"
+

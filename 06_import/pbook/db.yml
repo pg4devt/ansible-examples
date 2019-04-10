@@ -1,0 +1,7 @@
+- name: Play to setup Database Server
+  hosts: vm1
+  tasks:
+    - name: Setting up Oracle configuration
+      debug:
+        msg: "Oracle setup playbook imported"
+

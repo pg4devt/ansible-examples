@@ -1,0 +1,8 @@
+---
+- name: Gather Facts Information
+  hosts: vm1
+  tasks:
+    - name: Show server information
+      debug:
+        msg: "The server is {{ hostvars[inventory_hostname].ansible_distribution }} Version {{ ansible_distribution_major_version }}"
+

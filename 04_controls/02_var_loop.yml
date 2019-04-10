@@ -1,0 +1,14 @@
+---
+- name: Simple loop with lists
+  hosts: vm1
+  vars:
+    user_names:
+      - John
+      - Sanjay
+      - Chuck
+  tasks:
+    - name: Simple list
+      debug:
+        msg: "{{item}}\n"
+      loop: "{{user_names}}"
+

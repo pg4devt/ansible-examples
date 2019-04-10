@@ -1,0 +1,11 @@
+---
+- name: Play to create a user on server
+  hosts: vm1
+  vars_files:
+    - vars/variables.yml
+  tasks:
+    - name: Remove user {{uname}}
+      user:
+        name: "{{ uname }}"
+        state: absent
+        remove: yes

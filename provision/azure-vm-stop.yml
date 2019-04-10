@@ -1,0 +1,9 @@
+- name: Stop Azure VM
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Deallocate the virtual machine
+    azure_rm_virtualmachine:
+      resource_group: myResourceGroup
+      name: myVM1
+      allocated: no

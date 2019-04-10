@@ -1,0 +1,15 @@
+---
+- name: Register variables
+  hosts: vm1
+  vars:
+    package: httpd
+  tasks:
+    - name: Installs the package httpd
+      yum:
+        name: httpd
+        state: latest
+      register: show_result
+
+    - name: Show results
+      debug: var=show_result
+

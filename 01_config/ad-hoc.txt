@@ -1,0 +1,5 @@
+ansible -m ping -i inventory all
+ansible -m shell -i inventory all -a "cat /etc/centos-release"
+ansible -m setup -i inventory all
+ansible -m setup -i inventory all -a "filter=ansible_date_time"
+

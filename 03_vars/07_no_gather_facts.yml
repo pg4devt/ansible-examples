@@ -1,0 +1,9 @@
+---
+- name: Do not gather Facts Information
+  hosts: vm1
+  gather_facts: no
+  tasks:
+    - name: No gathering of facts
+      debug:
+        msg: "Facts where not gathered"
+

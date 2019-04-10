@@ -1,0 +1,14 @@
+---
+- name: Simple loop with lists
+  hosts: vm1
+  tasks:
+    - name: Simple list
+      debug:
+        msg: The current service is {{item.name}} and number is {{item.number}}
+      loop:
+        - name: postfix
+          number: 80
+        - name: dovecot
+          number: 20
+        - {name: httpd, number: 30}
+

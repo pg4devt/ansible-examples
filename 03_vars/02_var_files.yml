@@ -1,0 +1,10 @@
+---
+- name: Play to create a user on server
+  hosts: vm1
+  vars_files:
+    - vars/variables.yml
+  tasks:
+    - name: Creating user {{uname}}
+      user:
+        name: "{{ uname }}"
+        comment: "{{ fname }}"

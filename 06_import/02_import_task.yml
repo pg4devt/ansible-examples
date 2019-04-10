@@ -1,0 +1,9 @@
+# Administrators can divide a larger playbook into smaller tasks for ease of management and reduce playbook clutter
+
+- name: Installation of packages
+  hosts: vm1
+
+  tasks:
+    - name: Include the package installer
+      import_tasks: tasks/setup.yml
+

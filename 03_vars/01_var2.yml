@@ -1,0 +1,12 @@
+---
+- name: Play to create a user on server
+  hosts: vm1
+  vars:
+    uname: jack
+    fname: "Jack Ma"
+  tasks:
+    - name: Remove the user {{uname}}
+      user:
+        name: "{{ uname }}"
+        state: absent
+        remove: yes

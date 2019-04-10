@@ -1,0 +1,13 @@
+- name: Regular Play inside the MASTER playbook
+  hosts: vm1
+  tasks:
+    - name: Executing a normal task
+      debug:
+        msg: "This is a normal play"
+
+- name: Prepare the web server
+  import_playbook: pbook/web.yml
+
+- name: Prepare the database server
+  import_playbook: pbook/db.yml
+

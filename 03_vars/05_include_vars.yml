@@ -1,0 +1,11 @@
+---
+- name: Test include_vars
+  hosts: vm1
+  tasks:
+    - name: including variables
+      include_vars: vars/pkg.yml
+
+    - name: Displaying variables
+      debug:
+        msg: "{{packages.db}} and {{packages['ftp']}} have been imported"
+

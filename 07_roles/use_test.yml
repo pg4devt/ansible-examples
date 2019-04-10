@@ -1,0 +1,5 @@
+---
+- name: Calling the test role
+  hosts: vm1
+  roles:
+    - test

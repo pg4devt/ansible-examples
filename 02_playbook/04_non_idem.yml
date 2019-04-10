@@ -1,0 +1,7 @@
+---
+- name: Non-Idempotent
+  hosts: vm1
+  tasks:
+  - name: Non-Idempotent approach with shell module
+    shell: echo "nameserver 172.25.250.254" > /tmp/resolv.conf
+

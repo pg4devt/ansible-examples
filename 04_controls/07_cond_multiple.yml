@@ -1,0 +1,15 @@
+---
+- name: Conditional based on an item in a list
+  hosts: vm1
+  tasks:
+    - name: Install Dovecot testing multiple conditions
+      yum:
+        name: dovecot
+        state: latest
+      when: ansible_distribution == "RedHat" or ansible_distribution == "Fedora"
+
+#      when: > 
+#        ( ansible_distribution == "RedHat" and ansible_distribution_major_version == "7" )
+#        or
+#        ( ansible_distribution == "Fedora" and ansible_distribution_major_version == "28" )
+

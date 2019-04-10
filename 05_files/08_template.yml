@@ -1,0 +1,8 @@
+- name: Demo Template
+  hosts: vm1
+  tasks:
+    - name: installing J2 template
+      template:
+        src: config.j2
+        dest: /tmp/details.txt
+

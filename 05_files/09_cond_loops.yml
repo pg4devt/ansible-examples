@@ -1,0 +1,15 @@
+- name: Demonstrate the use of conditionals and loops in jinja2 templates
+  hosts: vm1
+  vars:
+    myusers:
+      - jerry
+      - jack
+      - john
+      - JAMES
+    prodserver: no
+
+  tasks:
+    - name: render Jinja2 template
+      template:
+        src: loops.j2
+        dest: /tmp/test.rendered

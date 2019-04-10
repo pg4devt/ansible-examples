@@ -1,0 +1,13 @@
+---
+- name: Simple loop with lists
+  hosts: vm1
+  tasks
+    - name: Simple list
+      user:
+        name: "{{item}}"
+        state: present
+      loop:
+        - joe
+        - mark
+        - jill
+

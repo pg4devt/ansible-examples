@@ -1,0 +1,17 @@
+- name: DEMO for blockinfile
+  hosts: vm1
+  tasks:
+    - name: insert/update custom markers
+      blockinfile:
+        path: /tmp/file_deploy_demo.txt
+        marker: "## {mark} ANSIBLE MANAGED BLOCK ##"
+        insertafter: "The PS command"
+        content: |
+            Welcome to Ansible 2.7
+            Hope you are Enjoying !!!
+
+			
+## BEGIN ANSIBLE MANAGED BLOCK ##
+Welcome to Ansible 2.7
+Hope you are Enjoying !!!
+## END ANSIBLE MANAGED BLOCK ##

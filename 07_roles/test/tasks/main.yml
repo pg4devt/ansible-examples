@@ -1,0 +1,7 @@
+---
+# Tasks for motd role
+- name: Render and install the motd file
+  template:
+    src: motd.j2      # NOTE: path has not been given
+    dest: /tmp/motd
+

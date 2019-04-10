@@ -1,0 +1,10 @@
+- name: DEMO for fetch module
+  hosts: vm1
+  gather_facts: false
+  tasks:
+    - name: fetch the file_deploy_demo.txt
+      fetch:
+        src: /tmp/file_deploy_demo.txt
+        dest: /tmp/fetched/
+        flat: yes #To override the default behavior of appending hostname/path/to/file to the destination
+

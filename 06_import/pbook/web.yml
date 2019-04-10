@@ -1,0 +1,7 @@
+- name: Play to setup Web Server
+  hosts: vm1
+  tasks:
+    - name: Setting up NginX configuration
+      debug:
+        msg: "WEB setup playbook imported"
+

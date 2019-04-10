@@ -1,0 +1,9 @@
+---
+- name: Setup Apache webserver
+  hosts: vm1
+  tasks:
+  - name: Installing web server
+    yum:
+      name: httpd
+      state: latest
+

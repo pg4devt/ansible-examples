@@ -1,0 +1,13 @@
+- name: DEMO for stat module to retrieve facts for a file similar to the linux/unix ‘stat’ comma
+  hosts: vm1
+  gather_facts: false
+  tasks:
+    - name: Verify the checksum of a file  
+      stat:
+        path: /home/philip_gurango/myshare/touched_file
+        get_attributes: yes
+      register: result
+    
+    - debug:
+        var: result
+

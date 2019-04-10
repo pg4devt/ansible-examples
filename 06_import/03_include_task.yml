@@ -1,0 +1,13 @@
+# Administrators can divide a larger playbook into smaller tasks for ease of management and reduce playbook clutter
+
+- name: Installation of packages
+  hosts: vm1
+  vars:
+    pkg:
+      pname: mariadb-server
+      service: mariadb
+      s_state: started
+  tasks:
+    - name: Include the package installer
+      include_tasks: tasks/install.yml
+

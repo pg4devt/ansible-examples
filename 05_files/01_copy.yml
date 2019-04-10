@@ -1,0 +1,9 @@
+---
+- name: Connect to VM
+  hosts: vm1
+  tasks:
+  - name: Copy file
+    copy:
+      src: file.txt
+      dest: /tmp/file_copied.txt
+

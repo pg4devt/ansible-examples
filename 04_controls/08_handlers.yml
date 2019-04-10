@@ -1,0 +1,23 @@
+---
+- name: Implementing Handlers
+  hosts: vm1
+  become: yes
+  tasks:
+    - name: install Apache
+      yum:
+        name: httpd
+        state: installed
+      notify:
+        - start_apache
+
+  handlers:
+    - name: start_apache
+      service:
+        name: httpd
+        state: started
+
+    - name: start_apache
+      debug:
+        msg: "Apache is now installed and running"
+        
+

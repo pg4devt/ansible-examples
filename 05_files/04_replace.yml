@@ -1,0 +1,14 @@
+---
+- name: Connect to VM
+  hosts: vm1
+  tasks:
+  - name: Copy file
+    copy:
+      src: file_deploy_demo.txt
+      dest: /tmp/file_deploy_demo.txt
+
+  - name: replace ps in the target file
+    replace:
+      path: /tmp/file_deploy_demo.txt
+      regexp: 'ps'
+      replace: PS

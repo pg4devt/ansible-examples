@@ -1,0 +1,17 @@
+---
+- name: Demo of arrays
+  hosts: vm1
+  vars:
+    users:
+      uname: betsy
+      age: 34
+      addr: 8107 Tamarron Dr.
+  tasks:
+    - name: Display array content method 1
+      debug:
+        msg: "{{users.uname}} {{users.age}} {{users.addr}}"
+
+    - name: Display Array content method 2
+      debug:
+        msg: "{{users['uname']}} {{users['age']}} {{users['addr']}}"
+

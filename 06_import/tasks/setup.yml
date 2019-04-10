@@ -1,0 +1,8 @@
+---
+  - name: Installs the MariaDB package
+    debug:
+      msg: "MariaDB package is successfully installed"
+
+  - name: Set service startup for MariaDB
+    debug:
+      msg: "MariaDB service is up and running"

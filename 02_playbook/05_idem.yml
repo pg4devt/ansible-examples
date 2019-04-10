@@ -1,0 +1,9 @@
+---
+- name: Idempotent
+  hosts: vm1
+  tasks:
+  - name: Idempotent approach with copy module
+    copy:
+      dest: /tmp/resolv.conf
+      content: "nameserver 172.25.250.254\n"
+

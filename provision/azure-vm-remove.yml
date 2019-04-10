@@ -1,0 +1,11 @@
+- name: Remove VM and all resources
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Remove VM and resources
+    azure_rm_virtualmachine:
+      resource_group: myResourceGroup
+      name: myVM1
+      state: absent
+      remove_on_absent: all
+
